@@ -17,7 +17,6 @@ test.each `
 
   const vectorA = new Vector(a);
   const vectorB = new Vector(b);
-
   expect(vectorA.dot(vectorB)).toEqual(dot);
 
 })
