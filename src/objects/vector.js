@@ -31,6 +31,7 @@ class Vector {
   }
 
   constructor(direction, origin) {
+    this.name = "Vector";
     this.id = uuidv4();
     this.direction = new Point(...direction);
     this.origin = origin ? new Point(...origin) : Point.Zero(direction.length);

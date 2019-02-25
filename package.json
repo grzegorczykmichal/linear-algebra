@@ -2,10 +2,11 @@
   "name": "rayray",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "test": "jest",
-    "build": "parcel build index.js"
+    "build": "parcel build index.html --public-url ./",
+    "start": "parcel index.html"
   },
   "keywords": [],
   "author": "",

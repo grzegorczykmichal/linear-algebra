@@ -12,12 +12,15 @@ import {
 } from "./halfLine";
 
 import {
-  Point
-} from "./../objects";
-
-import {
   DrawableVector
 } from "./../drawables";
+
+import {
+  Point,
+  Vector,
+  Line,
+  HalfLine
+} from "./../objects"
 
 class Renderer {
   constructor(context, size, origin, scale) {
@@ -29,24 +32,26 @@ class Renderer {
     this.context = context;
 
     this.renderers = {
-      "Point": pointRenderer(this),
-      "Vector": (vector) => {
+      [`Point`]: pointRenderer(this),
+      [`Vector`]: (vector) => {
         new DrawableVector(vector).render(this);
       },
-      "Line": lineRenderer(this),
-      "HalfLine": halfLineRenderer(this),
+      [`Line`]: lineRenderer(this),
+      [`HalfLine`]: halfLineRenderer(this),
     };
   }
 
   renderObject(object, props = {}) {
-    const renderObject = this.renderers[object.constructor.name] || (() => {});
+    const renderObject = this.renderers[object.name] || (() => {
+      console.log(`No renderer found for ${object.name}.`)
+    });
+
+
     renderObject(object, props);
   }
 
   render(scene) {
-
     this.context.clearRect(0, 0, this.size, this.size);
-
     scene.visit(this);
   }
 

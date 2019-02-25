@@ -45,13 +45,14 @@ const SCALE = 80;
 
 const CONTEXT = canvas.getContext("2d");
 
+
 const scene = new Scene(CONTEXT, canvas);
 const renderer = new Renderer(CONTEXT, SIZE, ORIGIN, SCALE);
 
 const a = new Vector([1, 1]);
 const b = new Vector([-1, 2]);
 
-const c = new Vector([1, 1], [1, 1]);
+const c = new Vector([-1, 1], [3, 3]);
 
 const d = b.subtract(a);
 d.origin = a.direction;
@@ -71,8 +72,8 @@ const line1 = new Line(d);
 
 const hl = new HalfLine(new Point(0.5, -1), new Vector([1, 2]));
 
-// const line2 = new Line();
-// const line3 = new Line(new Vector([0, 1]), new Vector([2, 2]));
+//const line2 = new Line();
+const line3 = new Line(new Vector([0, 1]));
 
 // scene.addObject(a, b, c, line1, e);
 scene.addObject(
@@ -83,9 +84,11 @@ scene.addObject(
   // new Point(0, -1),
   hl,
   a,
+  line1,
+  line3,
   b,
-  line1
-  // a.add(b)
+  e, f, c,
+  a.add(b)
 );
 
 // scene.addCamera(new Camera({

@@ -4,6 +4,7 @@ class Point {
   }
 
   constructor(...coordinates) {
+    this.name = "Point";
     this.coordinates = coordinates;
   }
 

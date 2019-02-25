@@ -2,6 +2,7 @@ import uuidv4 from 'uuid/v4';
 
 class Line {
   constructor(vector) {
+    this.name = "Line";
     this.id = uuidv4();
     this.vector = vector;
   }

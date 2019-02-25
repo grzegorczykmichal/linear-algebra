@@ -29,9 +29,8 @@ const renderOrigin = (ctx, origin, scale) => vector => (props = {}) => {
     origin + vector.origin.getX() * scale,
     origin - vector.origin.getY() * scale
   );
-  ctx.scale(scale, scale);
   ctx.beginPath();
-  ctx.arc(0, 0, 0.05, 0, 2 * Math.PI);
+  ctx.arc(0, 0, 3, 0, 2 * Math.PI);
   ctx.fillStyle = props.color || "hsl(80, 70%, 50%)";
   ctx.fill();
   ctx.restore();
@@ -85,7 +84,6 @@ const vectorRenderer = renderer => {
     renderLine(ctx, origin, scale)(vector)(props);
     renderTip(ctx, origin, scale)(vector)(props);
     renderOrigin(ctx, origin, scale)(vector)(props);
-    // renderAngle(ctx, origin, scale)(vector)(props);
   };
 };
 
