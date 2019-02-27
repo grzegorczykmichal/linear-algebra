@@ -78,7 +78,7 @@ const line3 = new Line(new Vector([0, 1]));
 // scene.addObject(a, b, c, line1, e);
 scene.addObject(
   // Point.Zero(2),
-  new Point(-2, 4),
+  new Point(-2, -4),
   // new Point(1, 0),
   // new Point(-1, 0),
   // new Point(0, -1),
