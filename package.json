@@ -1,7 +1,7 @@
 {
   "name": "rayray",
   "version": "1.0.0",
-  "description": "",
+  "description": "Linear algebra",
   "main": "index.html",
   "scripts": {
     "test": "jest",
