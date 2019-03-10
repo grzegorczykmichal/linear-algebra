@@ -23,8 +23,12 @@ class Scene {
     );
   }
 
-  addObject(...object) {
-    this.objects = this.objects.concat(object);
+  addObject(...objects) {
+    this.objects = this.objects.concat(objects);
+  }
+
+  replaceObject(...objects) {
+    this.objects = objects;
   }
 
   addCamera(camera) {
@@ -39,8 +43,14 @@ class Scene {
     this.callback = callback;
   }
 
+  print() {
+    console.group("Scene");
+    console.log(this.objects.map(o => o.toString()));
+    console.groupEnd("Scene");
+  }
+
   visit(renderer) {
-    renderer.renderSelectionPoint(this.selectionPoint, this.objects);
+    // renderer.renderSelectionPoint(this.selectionPoint, this.objects);
 
     this.objects.forEach(object => {
       // if (object.contains(this.selectionPoint));

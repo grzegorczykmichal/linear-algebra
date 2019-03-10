@@ -10,6 +10,15 @@ import {
 import {
   halfLineRenderer
 } from "./halfLine";
+import {
+  rayRenderer
+} from "./ray";
+import {
+  circleRenderer
+} from "./circle";
+import {
+  intersectionRenderer
+} from "./intersection";
 
 import {
   DrawableVector
@@ -38,6 +47,9 @@ class Renderer {
       },
       [`Line`]: lineRenderer(this),
       [`HalfLine`]: halfLineRenderer(this),
+      [`Ray`]: rayRenderer(this),
+      [`Circle`]: circleRenderer(this),
+      [`Intersection`]: intersectionRenderer(this),
     };
   }
 

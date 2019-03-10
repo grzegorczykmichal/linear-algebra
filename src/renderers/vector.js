@@ -31,7 +31,7 @@ const renderOrigin = (ctx, origin, scale) => vector => (props = {}) => {
   );
   ctx.beginPath();
   ctx.arc(0, 0, 3, 0, 2 * Math.PI);
-  ctx.fillStyle = props.color || "hsl(80, 70%, 50%)";
+  ctx.fillStyle = props.color || "hsl(220, 70%, 50%)";
   ctx.fill();
   ctx.restore();
 };

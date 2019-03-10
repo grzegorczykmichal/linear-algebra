@@ -38,6 +38,10 @@ class Point {
     return false;
   }
 
+  toString() {
+    return `Point \u2022(${this.coordinates})`;
+  }
+
 }
 
 export {
